@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the code from a version control system
+                checkout scm
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Build the project (replace with your build commands)
+                sh 'mvn clean package'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Run tests (replace with your test commands)
+                sh 'mvn test'
+            }
+        }
+        stage('Sonarcube analysis'){
+            steps {
+                // scan reports
+            }
+        }
+         stage('continuos Deployment'){
+            steps {
+                // scan reports
+            }
+        }
+    }
+    }
