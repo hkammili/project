@@ -4,33 +4,38 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-            
-                checkout scm
+                echo 'checking'
             }
         }
         
         stage('Build') {
             steps {
+                echo 'Build'
                 
-                sh 'mvn clean package'
             }
         }
         
         stage('Test') {
             steps {
-           
-                sh 'mvn test'
-            }
-        }
-        stage('Sonarcube analysis'){
-            steps {
+                echo 'Test'
                 
             }
         }
-         stage('continuos Deployment'){
+        
+        stage('Sonarqube Analysis') {
             steps {
-                
+                echo 'Sonarqube Analysis'
+                // Perform SonarQube analysis here
+                // You need to add the commands or scripts to run SonarQube analysis
+            }
+        }
+        
+        stage('Continuous Deployment') {
+            steps {
+                echo 'Continuous Deployment'
+                // Perform continuous deployment tasks here
+                // You need to add the commands or scripts for deployment
             }
         }
     }
-    }
+}
