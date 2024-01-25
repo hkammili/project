@@ -4,49 +4,38 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
- develop
-            
- feature/file1
-                checkout scm
+                echo 'checking'
             }
         }
         
         stage('Build') {
             steps {
- develop
-
- feature/file1
-                sh 'mvn clean package'
+                echo 'Build'
+                
             }
         }
         
         stage('Test') {
             steps {
- develop
-           
-
-                // Run tests (replace with your test commands)
- feature/file1
-                sh 'mvn test'
+                echo 'Test'
+                
             }
         }
-        stage('Sonarcube analysis'){
+        
+        stage('Sonarqube Analysis') {
             steps {
- develop
-                
-
-                // scan reports
-feature/file1
+                echo 'Sonarqube Analysis'
+                // Perform SonarQube analysis here
+                // You need to add the commands or scripts to run SonarQube analysis
             }
         }
-         stage('continuos Deployment'){
+        
+        stage('Continuous Deployment') {
             steps {
- develop
-                
-
-                // scan reports
- feature/file1
+                echo 'Continuous Deployment'
+                // Perform continuous deployment tasks here
+                // You need to add the commands or scripts for deployment
             }
         }
     }
-    }
+}
