@@ -4,32 +4,48 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+ develop
             
+ feature/file1
                 checkout scm
             }
         }
         
         stage('Build') {
             steps {
-                
+ develop
+
+ feature/file1
                 sh 'mvn clean package'
             }
         }
         
         stage('Test') {
             steps {
+ develop
            
+
+                // Run tests (replace with your test commands)
+ feature/file1
                 sh 'mvn test'
             }
         }
         stage('Sonarcube analysis'){
             steps {
+ develop
                 
+
+                // scan reports
+feature/file1
             }
         }
          stage('continuos Deployment'){
             steps {
+ develop
                 
+
+                // scan reports
+ feature/file1
             }
         }
     }
