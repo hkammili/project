@@ -36,7 +36,7 @@ pipeline{
                 echo "dev stage"
             }
         }
-        stage('Test'){
+        stage('Testing'){
             steps{
                 echo "Push to test stage"
             }
