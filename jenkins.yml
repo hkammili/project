@@ -1,0 +1,56 @@
+pipeline{
+    agent any
+    stages{
+        stage('checkout stage'){
+            steps{
+                echo "checkout stage"
+            }
+        }
+        stage('Build stage'){
+            steps{
+                echo "build stage"
+            }
+        }
+        stage('Test'){
+            steps{
+                echo "Test Stage"
+            }
+        }
+        stage('Scan'){
+            steps{
+                echo "sonar qube analysis for code quality"
+            }
+        }
+        stage('Quality gate'){
+            steps{
+                echo "Abort the pipeline if it didn't pass code quality"
+            }
+        }
+        stage('Artifactory'){
+            steps{
+                echo "Push the artifact to JFrog"
+            }
+        }
+        stage('dev'){
+            steps{
+                echo "dev stage"
+            }
+        }
+        stage('Test'){
+            steps{
+                echo "Push to test stage"
+            }
+        }
+        stage('Staging')
+        {
+            steps{
+                echo "Push to Staging"
+            }
+        }
+        stage('Prod'){
+            steps{
+                echo "Push to Production"
+            }
+        }
+    }
+}
