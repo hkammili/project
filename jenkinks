@@ -4,33 +4,38 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Check out the code from a version control system
-                checkout scm
+                echo 'checking'
             }
         }
         
         stage('Build') {
             steps {
-                // Build the project (replace with your build commands)
-                sh 'mvn clean package'
+                echo 'Build'
+                
             }
         }
         
         stage('Test') {
             steps {
-                // Run tests (replace with your test commands)
-                sh 'mvn test'
+                echo 'Test'
+                
             }
         }
-        stage('Sonarcube analysis'){
+        
+        stage('Sonarqube Analysis') {
             steps {
-                // scan reports
+                echo 'Sonarqube Analysis'
+                // Perform SonarQube analysis here
+                // You need to add the commands or scripts to run SonarQube analysis
             }
         }
-         stage('continuos Deployment'){
+        
+        stage('Continuous Deployment') {
             steps {
-                // scan reports
+                echo 'Continuous Deployment'
+                // Perform continuous deployment tasks here
+                // You need to add the commands or scripts for deployment
             }
         }
     }
-    }
+}
